@@ -1,0 +1,42 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-input{
+    border-width: 0;
+    border-inline: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.login-buttons{
+    text-decoration: none;
+    width: 12%;
+    padding-top: 25px;
+}
+
+.login-buttons > form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-buttons > form > button {
+    background-color: rgb(82, 127, 179);
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    transition: 110ms;
+}
+
+.login-buttons > form > button:hover,
+.login-buttons > form > button:focus{
+    background-color: rgb(89, 183, 238);
+}

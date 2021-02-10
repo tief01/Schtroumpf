@@ -1,0 +1,12 @@
+<div class="login">
+    <app-svg></app-svg>
+    <h1>Login {{ id }}</h1>
+    <input placeholder="Schtroumpf ID" class="login-input" type="text" [(ngModel)]="id">
+    <input placeholder="Password" class="login-input" type="password" [(ngModel)]="password">
+    <div class="login-buttons">
+        <form (submit)="connect()">
+            <button type="submit" >Connection</button>
+            <button routerLink="/inscription">Inscription</button>
+        </form>
+    </div>
+</div>

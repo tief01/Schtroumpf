@@ -1,0 +1,18 @@
+<form (submit)="handleSubmit()">
+    <div class="inscription-container">
+        <div class="logo">
+            <app-svg routerLink='/' ></app-svg>
+        </div>
+        <h1>Inscription</h1>
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="text" placeholder="id" [(ngModel)]="id" required>
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="password" placeholder="password" [(ngModel)]="password" required>
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="number" placeholder="age" [(ngModel)]="age" required>
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="text" placeholder="famille" [(ngModel)]="famille">
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="text" placeholder="race" [(ngModel)]="race">
+        <input class="inscription-element" [ngModelOptions]="{standalone: true}" type="text" placeholder="nourriture" [(ngModel)]="nourriture">
+        <div class="inscription-button">
+            <button type="submit">S'inscrire</button>
+            <button type="reset">Annuler</button>
+        </div>
+    </div>
+</form>

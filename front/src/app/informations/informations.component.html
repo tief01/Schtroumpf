@@ -1,0 +1,61 @@
+<div class="info">
+    <div class="header">
+        <h1>MySchtroumpf</h1>
+        <div class="searchbar">
+            <input type="text" placeholder="Search a Schtroumpf" [(ngModel)]="search">
+            <button class="search-btn" (click)="getInfo(this.search)">Recherche</button>
+        </div>
+    </div>
+    <div class="btn-ctn">
+        <button [disabled]='isUser' class="add-button" (click)="addAmi()">
+            <app-svg-btn></app-svg-btn>{{ btnAmi }}
+        </button>
+        <button *ngIf="!update&&isUser" (click)="toUpdate()">Modifier</button>
+        <button *ngIf="!isUser" (click)="getInfo(userService.user)">Profile</button>
+        <button *ngIf="update" (click)="updateProfile()">Appliquer la modification</button>
+        <button (click)="logout()">Se déconnecter</button>
+    </div>
+    <div class="body">
+        <div class="tab">
+            <h2>Liste d'amis</h2>
+            <div class="list" *ngFor="let ami of friendList">
+                <div class="list-elt" (click)="handleClickList(ami)" > <app-svg-btn></app-svg-btn> {{ ami }}</div>
+            </div>
+        </div>
+        <div class="body-info">
+            <app-svg class="element svg"></app-svg>
+            <div class='element'>
+                <b>id </b>
+                <p> {{ user.id }} </p>
+            </div>
+            <div class="element">
+                <b>age</b>
+                <div class="update">
+                    <p *ngIf="!update"> {{ user.age }} </p>
+                    <input *ngIf="update" type='number' placeholder="age" [(ngModel)]='upAge'>
+                </div>
+            </div>
+            <div class="element">
+                <b>famille</b>
+                <div class="update">
+                    <p *ngIf="!update"> {{ user.famille }} </p>
+                    <input *ngIf="update" placeholder="famille" [(ngModel)]='upFamille'>
+                </div>
+            </div>
+            <div class="element">
+                <b>race</b>
+                <div class="update">
+                    <p *ngIf="!update"> {{ user.race }} </p>
+                    <input *ngIf="update" placeholder="race" [(ngModel)]='upRace'>
+                </div>
+            </div>
+            <div class="element">
+                <b>nourriture</b>
+                <div class="update">
+                    <p *ngIf="!update"> {{ user.nourriture }} </p>
+                    <input *ngIf="update" placeholder="nourriture" [(ngModel)]='upNourriture'>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
